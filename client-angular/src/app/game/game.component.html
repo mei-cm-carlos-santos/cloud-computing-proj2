@@ -1,0 +1,33 @@
+<div class="game-zone-header">
+    <h3 class="text-center">Game "{{gameInfo.game.gameNumber}}"</h3>
+</div>
+<div class="game-zone-content">       
+    <div class="row">
+        <div class="alert" [ngClass]="alertClass()">
+            <p>{{alertText()}}</p>
+        </div>
+    </div>
+
+    <div class="row board text-center">
+        <div *ngFor="let peca of gameInfo.game.board; let i = index">
+            <img [src]="pecaImageURL(peca)" (click)="clickPeca(i)">
+        </div>
+    </div>
+    <hr>
+
+    <div class="row game-info">
+        <label class="col-xs-4 label-title">Crosses:</label>
+        <label class="col-xs-8 label-value">{{nameOfPlayer(1)}}</label>
+        <label class="col-xs-4 label-title">Circles:</label>
+        <label class="col-xs-8 label-value">{{nameOfPlayer(2)}}</label>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="form-group ">
+            <a  type="button" class="btn btn-lg btn-block restricted-button" [ngClass]="submitClass()" (click)="clickClose()">{{submitText()}}</a>
+        </div>
+    </div>
+
+</div>  <!-- game-zone-content -->

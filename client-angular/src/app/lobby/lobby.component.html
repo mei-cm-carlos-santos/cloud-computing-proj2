@@ -1,0 +1,30 @@
+<section class="datatable-info">
+<h2 class="text-center">Lobby</h2>
+<hr>
+<div class="row">
+    <div class="form-group ">        
+        <a  type="button" class="btn btn-success btn-lg btn-block  restricted-button" (click)="createGame()">Create New Game</a>
+    </div>
+</div>
+<table class="table table-striped">
+<thead>
+    <tr>
+    <th>Game Number</th>
+    <th>Created at</th>
+    <th>Created by</th>
+    <th></th>
+    </tr>          
+</thead>
+<tbody>
+    <tr *ngFor="let g of games">
+            <td>{{g.gameId}}</td>
+            <td>{{g.createdTime | date:'dd-MM-y HH:mm:ss'}}</td>
+            <td>{{g.player1.name}}</td>
+            <td *ngIf="!createdByMe(g.player1._id)"><a  type="button" class="btn btn-primary btn-md" (click)="joinGame(g._id)">Join</a></td>          
+            <td *ngIf="createdByMe(g.player1._id)"><a  type="button" class="btn btn-danger btn-md"  (click)="removeGame(g._id)">Remove</a></td>                      
+    </tr>    
+</tbody>
+
+</table>
+
+</section>

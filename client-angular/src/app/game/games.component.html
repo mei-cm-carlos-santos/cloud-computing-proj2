@@ -1,0 +1,10 @@
+<section class="gaming-zone">
+<div class="container">    
+<div  class="row" >
+    <div *ngFor="let g of games" class="col-xs-12 col-sm-6 col-md-6 col-lg-4 game-zone">
+        {{ gameInfo | json}}
+        <game [gameInfo]="g" (onClickPeca)="clickPeca($event)" (onClickClose)="clickClose($event)"></game>
+    </div>    <!-- game-zone -->    
+</div>        <!-- row -->    
+</div>        <!-- container -->    
+</section>    

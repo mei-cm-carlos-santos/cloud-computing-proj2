@@ -1,0 +1,138 @@
+body { padding-top: 70px; }
+
+
+
+.main{
+    margin-top: 50px;
+}
+
+.main-content {
+/*    background-color:#009edf;*/
+
+    border: 2px solid #009edf;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 20px 40px;
+    color: #ccc;
+    text-shadow: none;
+
+    border-bottom-right-radius:10px ;
+    border-bottom-left-radius:10px 
+}
+
+.input-group{
+	margin: 20px 0px;
+}
+.input-group-addon {
+    color: #009edf ;
+    font-size: 17px;
+}
+.restricted-button{
+    margin: 0px auto;
+    max-width: 200px;;
+    
+}
+
+
+.content-header{
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #009edf;
+    color: #fff;
+    width: 100% ;
+    padding: 1px 0px;
+    border-top-right-radius:10px ;
+    border-top-left-radius:10px 
+}
+
+thead{
+    background-color: #009edf;
+    font-size: 110%;
+    color: white;
+}
+
+.table{
+    border: 2px solid #009edf;
+    margin: 10px auto;
+    padding: 20px 40px;
+    text-shadow: none;
+
+    border-bottom-right-radius:10px ;
+    border-bottom-left-radius:10px 
+}
+
+.winner {
+	font-weight: bold;
+    background-color: #2563AB;
+    color: white;
+}
+
+
+.game-zone{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-zone-content {
+/*    background-color:#009edf;*/
+
+    border: 2px solid #009edf;
+    margin: 0 auto;
+    /*max-width: 450px;*/
+    padding: 20px 30px;
+    color: #ccc;
+    text-shadow: none;
+
+    border-bottom-right-radius:10px ;
+    border-bottom-left-radius:10px 
+}
+
+.game-zone-header{
+    /*max-width: 450px;*/
+    margin: 0 auto;
+    background-color: #009edf;
+    color: #fff;
+    width: 100% ;
+    padding: 1px 0px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    font-weight: 90%;
+
+}
+
+
+.game-info {
+	color: black;
+}
+.label-title {
+	font-weight: bold;
+}
+.label-value {
+	font-weight: normal;
+}
+
+.board{
+    max-width: 350px;
+    margin: 0 auto;
+	border-style: solid;
+	border-width: 0px 0 0 0px;
+	border-color: black;
+}
+
+.board div{
+	display: inline-block;
+	border-style: solid;
+	border-width: 2px 2px 2px 2px;
+	border-color: black;
+	margin-left: -2px;
+	margin-top: -2px;
+}
+
+.board img{
+	width: 80px;
+	height: 80px;
+	margin: 5px;
+	padding: 0;
+	border-style: none;
+}

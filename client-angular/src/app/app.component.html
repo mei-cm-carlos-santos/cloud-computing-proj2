@@ -1,0 +1,54 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a routerLink="/" class="navbar-brand">TicTacToe</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li *ngIf="isLogged()" [class.active]="isActiveLink('lobby')"><a routerLink="/lobby">Lobby</a></li>
+            <li *ngIf="isLogged()" [class.active]="isActiveLink('games')"><a routerLink="/games">Games Playing</a></li>
+            <li [class.active]="isActiveLink('top')"><a routerLink="/top">Top</a></li>
+            <li *ngIf="isLogged()"  class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li *ngIf="isLogged()" [class.active]="isActiveLink('gamesdata/mg')"><a routerLink="/gamesdata/mg">My games</a></li>
+                <li *ngIf="isLogged()" [class.active]="isActiveLink('gamesdata/mv')"><a routerLink="/gamesdata/mv">My victories</a></li>
+                <li *ngIf="isLogged()" [class.active]="isActiveLink('gamesdata/md')"><a routerLink="/gamesdata/md">My defeats or ties</a></li>
+                <li *ngIf="isLogged()"role="separator" class="divider"></li>
+                <li *ngIf="isLogged()" [class.active]="isActiveLink('gamesdata/g')"><a routerLink="/gamesdata/g">All games</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="!isLogged()" [class.active]="isActiveLink('login')"><a routerLink="/login">login</a></li>  
+            <li *ngIf="!isLogged()" [class.active]="isActiveLink('register')"><a routerLink="/register">Register</a></li> 
+            <li *ngIf="isLogged()" class="dropdown">
+              <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{username()}}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li [class.active]="isActiveLink('changepassword')"><a routerLink="/changepassword">Change Password</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a (click)="logout()">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<div class="container">
+  <div *ngIf="showAlert()" class="alert alert-info fade in">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <strong>New Game!</strong> Game {{lastActiveGameNumber}} has started. Please enter the game by clicking <a (click)="gotoGame(lastActiveGame)" class="alert-link">here</a>
+  </div>  
+    <router-outlet></router-outlet>
+</div>
+        

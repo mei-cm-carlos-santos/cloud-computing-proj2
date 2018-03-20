@@ -1,0 +1,82 @@
+      <section class="register-info">
+      <div class="container">
+        <div class="row main">
+            <div class="content-header">
+                <h3 class="text-center">register</h3>
+              </div>
+            <div class="main-content">
+                <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value, $event)">
+                <div class="input-group" [ngClass]="{'has-error':!(complexForm.controls['name'].valid || complexForm.controls['name'].pristine)}">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="Enter your Name" 
+                         [formControl]="complexForm.controls['name']">
+                </div>
+                <div [hidden]="!(complexForm.controls['name'].hasError('required') && complexForm.controls['name'].touched)" class="alert alert-danger">
+                      Name is required.
+                </div>  
+                <div [hidden]="!(complexForm.controls['name'].hasError('minlength') && complexForm.controls['name'].touched)" class="alert alert-danger">
+                      Name must have at least 2 characters.
+                </div>  
+                <div [hidden]="!(complexForm.controls['name'].hasError('maxlength') && complexForm.controls['name'].touched)" class="alert alert-danger">
+                      Name must have less than 50 characters.
+                </div>  
+                <div class="input-group" [ngClass]="{'has-error':!(complexForm.controls['email'].valid || complexForm.controls['email'].pristine)}">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="Enter your Email" 
+                         [formControl]="complexForm.controls['email']">
+                </div>
+                <div [hidden]="!(complexForm.controls['email'].hasError('required') && complexForm.controls['email'].touched)" class="alert alert-danger">
+                      Email is required.
+                </div>  
+                <div [hidden]="!(complexForm.controls['email'].hasError('pattern') && complexForm.controls['email'].touched)" class="alert alert-danger">
+                      Email format is invalid!
+                </div>  
+                <div [hidden]="(lastRepeatedEmail == '') || (complexForm.controls['email'].value != lastRepeatedEmail)" class="alert alert-danger">
+                      Email already in use.
+                </div>  
+
+                <hr>
+                <div class="input-group" [ngClass]="{'has-error':!(complexForm.controls['username'].valid || complexForm.controls['username'].pristine)}">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                  <input type="text" class="form-control" placeholder="Enter your UserName" 
+                         [formControl]="complexForm.controls['username']">
+                </div>
+                <div [hidden]="!(complexForm.controls['username'].hasError('required') && complexForm.controls['username'].touched)" class="alert alert-danger">
+                      Username is required.
+                </div>  
+                <div [hidden]="!(complexForm.controls['username'].hasError('minlength') && complexForm.controls['username'].touched)" class="alert alert-danger">
+                      Username must have at least 2 characters.
+                </div>  
+                <div [hidden]="!(complexForm.controls['username'].hasError('maxlength') && complexForm.controls['username'].touched)" class="alert alert-danger">
+                      Username must have less than 20 characters.
+                </div>  
+                <div [hidden]="(lastRepeatedUsername == '') || (complexForm.controls['username'].value != lastRepeatedUsername)" class="alert alert-danger">
+                      Username already in use.
+                </div>  
+                <div class="input-group" [ngClass]="{'has-error':!(complexForm.controls['password'].valid || complexForm.controls['password'].pristine)}">                  
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                  <input type="password" class="form-control" placeholder="Enter your password" 
+                         [formControl]="complexForm.controls['password']">
+                </div>
+                <div [hidden]="!(complexForm.controls['password'].hasError('required') && complexForm.controls['password'].touched)" class="alert alert-danger">
+                      Password is required.
+                </div>  
+                <div class="input-group" [ngClass]="{'has-error':!(complexForm.controls['password2'].valid || complexForm.controls['password2'].pristine)}">                  
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                  <input type="password" class="form-control" placeholder="Reenter your password" 
+                         [formControl]="complexForm.controls['password2']">
+                </div>
+                <div [hidden]="!(complexForm.controls['password2'].hasError('required') && complexForm.controls['password2'].touched)" class="alert alert-danger">
+                      Password is required.
+                </div>  
+                <div [hidden]="!(complexForm.hasError('mismatchedPasswords') && complexForm.controls['password2'].touched)" class="alert alert-danger">
+                      Passwords are not the same.
+                </div>  
+                <div class="form-group ">
+                    <input type="submit"  class="btn btn-primary btn-lg btn-block restricted-button" value="Sign me up!">
+                </div>
+                </form>
+            </div>
+          </div>
+      </div>
+      </section>

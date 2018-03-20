@@ -1,0 +1,27 @@
+<section class="datatable-info">
+<h2 class="text-center">Top 10</h2>
+
+<div *ngIf="errorMessageExists()">
+    <p>{{errorMessage}}</p>
+</div>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+        <th>Postion</th>    
+        <th>Username</th>
+        <th>Full Name</th>
+        <th>Victories</th>
+        </tr>          
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.totalVictories}}</td>
+        </tr>
+    </tbody>
+</table>
+
+</section>

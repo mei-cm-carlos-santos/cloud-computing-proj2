@@ -1,0 +1,32 @@
+<section class="datatable-info">
+<h2 class="text-center">History</h2>
+<h4 class="text-center">{{historyTypeDescription()}}</h4>
+
+<div *ngIf="errorMessageExists()">
+    <p>{{errorMessage}}</p>
+</div>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+        <th>Game Number</th>
+        <th>Started at</th>
+        <th>Terminated at</th>
+        <th class="text-right">Duration</th>
+        <th>First Player</th>
+        <th>Second Player</th>
+        </tr>                    
+    </thead>
+    <tbody>
+        <tr *ngFor="let g of games">
+            <td>{{g.gameId}}</td>
+            <td>{{g.startedTime | date:'dd-MM-y HH:mm:ss'}}</td>
+            <td>{{g.terminatedTime | date:'dd-MM-y HH:mm:ss'}}</td>
+            <td class="text-right">{{getDuration(g.terminatedTime,g.startedTime) | number:'1.0-0'}} sec.</td>
+            <td [ngClass]="{'winner':winnerClass(g,1)}">{{g.player1.name}}</td>
+            <td [ngClass]="{'winner':winnerClass(g,2)}">{{g.player2.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+</section>
