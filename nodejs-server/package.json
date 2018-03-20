@@ -1,0 +1,32 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "TicTacToe RestAPI server",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^7.0.52",
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.4.7",
+    "jsonwebtoken": "^7.2.1",
+    "jwt-decode": "^2.1.0",
+    "mongoose": "^4.7.8",
+    "mongoose-plugin-autoinc": "^1.1.9",
+    "passport": "^0.3.2",
+    "passport-http-bearer": "^1.0.1",
+    "restify": "^4.3.0",
+    "sha1": "^1.1.1",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.3",
+    "nodemon": "^1.11.0",
+    "ts-node": "^2.0.0"
+  }
+}
