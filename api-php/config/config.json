@@ -4,6 +4,6 @@
 	"clienthostname" : "http://localhost:4200",
 	"dbServerName": "localhost",
 	"dbName": "TicTacToeUsers",
-	"dbUserName": "homestead",
-	"dbpassword": "secret"
+	"dbUserName": "root",
+	"dbpassword": "root"
 }
