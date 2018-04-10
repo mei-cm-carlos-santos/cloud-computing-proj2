@@ -18,7 +18,7 @@ export class WebSocketService {
 
     constructor(private userSecurity: UserSecurityService) {
         if (!this.socket) {
-            this.socket = io('http://localhost:7777');  // URL to webSockets                     
+            this.socket = io('http://159.89.11.141:8080');  // URL to webSockets                     
         }
     }
 

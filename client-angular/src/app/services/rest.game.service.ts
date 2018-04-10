@@ -18,7 +18,7 @@ export class RestGameService extends RestBase {
       protected userSecurity: UserSecurityService,
       protected global: Global) {
           super(http, router, userSecurity, global); 
-          this.restUrl = 'http://localhost:7777/v1/';  // URL to web API
+          this.restUrl = 'http://172.17.0.3:80/v1/';  // URL to web API
       }
 
   preregister(name: string, email: string, username: string): Observable<any[]> {
