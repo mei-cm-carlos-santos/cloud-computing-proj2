@@ -1,8 +1,8 @@
 {
 	"secret": "randomstr-efr23fe2r3fegrbnj65645rfghuy4t4gh56r4fw924f9ue1)HG(&F&%/FT)",
 	"hostname": "http://cnprj2.test/",
-	"clienthostname" : "http://localhost:4200",
-	"dbServerName": "localhost",
+	"clienthostname" : "159.89.11.141",
+	"dbServerName": "172.17.0.2",
 	"dbName": "TicTacToeUsers",
 	"dbUserName": "root",
 	"dbpassword": "root"
