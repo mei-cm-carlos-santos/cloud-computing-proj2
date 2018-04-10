@@ -20,7 +20,7 @@ export class RestAuthService extends RestBase {
       protected userSecurity: UserSecurityService,
       protected global: Global) {
           super(http, router, userSecurity, global); 
-          this.restUrl = 'http://159.89.11.141/api/';  // URL to web API
+          this.restUrl = 'http://159.89.11.141:8888/api/';  // URL to web API
       }
 
   checkUniqueUsername(username: string): Observable<any[]> {
